@@ -32,7 +32,7 @@ public class TestRequestMappingHandler {
 		
 		System.out.println("TestRequestMappingHandler处理了hello请求！");
 		
-		System.out.println("TestRequestMappingHandler处理了hello请求！");
+		System.out.println("update by remote处理了hello请求！");
 		
 		return "success";
 		
