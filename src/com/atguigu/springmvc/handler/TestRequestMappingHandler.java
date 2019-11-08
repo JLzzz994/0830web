@@ -5,19 +5,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /*
- * 1. @RequestMapping±ê×¢µÄÎ»ÖÃ
- * @RequestMapping¿ÉÒÔ±ê×¢ÔÚÀàºÍ·½·¨ÉÏ
- * 		·½·¨ÉÏ£º  Îªµ±Ç°·½·¨°ó¶¨´¦ÀíµÄurl
- * 		ÀàÉÏ: Îªµ±Ç°ÀàµÄËùÓĞ±ê×¢ÁË@RequestMapping×¢½âµÄ·½·¨£¬Ìá¹©Ò»²ã¸¸Â·¾¶
+ * 1. @RequestMappingæ ‡æ³¨çš„ä½ç½®
+ * @RequestMappingå¯ä»¥æ ‡æ³¨åœ¨ç±»å’Œæ–¹æ³•ä¸Š
+ * 		æ–¹æ³•ä¸Šï¼š  ä¸ºå½“å‰æ–¹æ³•ç»‘å®šå¤„ç†çš„url
+ * 		ç±»ä¸Š: ä¸ºå½“å‰ç±»çš„æ‰€æœ‰æ ‡æ³¨äº†@RequestMappingæ³¨è§£çš„æ–¹æ³•ï¼Œæä¾›ä¸€å±‚çˆ¶è·¯å¾„
  * 				
  * 
- * 	±£Ö¤£º ÔÚÍ¬Ò»¸öÏîÄ¿ÖĞ£¬²»ÔÊĞí½«Í¬Ò»¸öurlÓ³Éäµ½²»Í¬µÄ±ê×¢ÁË@RequestMappingµÄ·½·¨ÉÏ£¡
- * 			±£Ö¤²»ÄÜ³öÏÖÓĞÏàÍ¬µÄ@RequestMapping
+ * 	ä¿è¯ï¼š åœ¨åŒä¸€ä¸ªé¡¹ç›®ä¸­ï¼Œä¸å…è®¸å°†åŒä¸€ä¸ªurlæ˜ å°„åˆ°ä¸åŒçš„æ ‡æ³¨äº†@RequestMappingçš„æ–¹æ³•ä¸Šï¼
+ * 			ä¿è¯ä¸èƒ½å‡ºç°æœ‰ç›¸åŒçš„@RequestMapping
  * 
- * 2. @RequestMappingµÄvalueºÍmethodÊôĞÔ
- * 			value£º ÏŞÖÆµ±Ç°·½·¨Æ¥ÅäµÄurlµÄÖµ
- * 			method:   ÏŞÖÆµ±Ç°·½·¨Æ¥ÅäµÄurlµÄÇëÇó·½Ê½¡£Èç¹û²»ÉùÃ÷£¬´ú±íÃ»ÓĞÏŞÖÆ¡£
- * 						ÉùÃ÷ºóÈç¹ûurl·¢ËÍµÄmethodºÍÉùÃ÷µÄ²»Æ¥Åä£¬±¨´í405£¡
+ * 2. @RequestMappingçš„valueå’Œmethodå±æ€§
+ * 			valueï¼š é™åˆ¶å½“å‰æ–¹æ³•åŒ¹é…çš„urlçš„å€¼
+ * 			method:   é™åˆ¶å½“å‰æ–¹æ³•åŒ¹é…çš„urlçš„è¯·æ±‚æ–¹å¼ã€‚å¦‚æœä¸å£°æ˜ï¼Œä»£è¡¨æ²¡æœ‰é™åˆ¶ã€‚
+ * 						å£°æ˜åå¦‚æœurlå‘é€çš„methodå’Œå£°æ˜çš„ä¸åŒ¹é…ï¼ŒæŠ¥é”™405ï¼
  * 
  * 
  * 
@@ -30,7 +30,9 @@ public class TestRequestMappingHandler {
 	@RequestMapping(value= {"/hello","/hello2"},method= {RequestMethod.GET})
 	public String handle1() {
 		
-		System.out.println("TestRequestMappingHandler´¦ÀíÁËhelloÇëÇó£¡");
+		System.out.println("TestRequestMappingHandlerå¤„ç†äº†helloè¯·æ±‚ï¼");
+		
+		System.out.println("TestRequestMappingHandlerå¤„ç†äº†helloè¯·æ±‚ï¼");
 		
 		return "success";
 		
