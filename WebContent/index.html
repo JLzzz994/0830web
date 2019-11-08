@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+		
+		$(function(){
+			$("#myA").click(function(){
+				
+				var bookObj={"bookName":"《东游记》","price":888.8,"author":"吴承恩","address":{"addressNum":"001","addressLoc":"xx省xx市"}};
+				//将js对象转为jsonstr
+				var bookStr=JSON.stringify(bookObj);
+				
+				//发送ajax请求
+				$.ajax({
+					type:"POST",
+					url:$(this).attr("href"),
+					data:bookStr,
+					// 通知服务器，当前的内容类型是json格式
+					contentType:"application/json",
+					success:function(data){
+						
+						alert(data);
+						
+					}
+
+				});
+				
+				
+				return false;
+			});
+			
+			
+		});
+
+
+</script>
+</head>
+<body>
+		<a href="hello">hello</a><br>
+		
+		<!-- a只能发送get -->
+		<a href="/SpringMVC/test1/hello">测试/test/hello的get请求</a><br>
+		
+		<form action="/SpringMVC/test1/hello2" method="post">
+				<input type="submit" value="提交post请求">
+		</form><br>
+		
+		<a href="/SpringMVC/test2/handle1?username=jack&pw=123">测试获取请求参数</a><br>
+		
+		<a href="/SpringMVC/test3/handle5?username=jack">测试原生webapi</a><br>
+		
+		<form action="/SpringMVC/test3/addBook" method="post">
+				<input name="bookName" value="《西游记》"><br>
+				<input name="price" value="88.8"><br>
+				<input name="author" value="吴承恩"><br>
+				<input name="address.addressNum" value="001"><br>
+				<input name="address.addressLoc" value="xx省xxx市"><br>
+				<input type="submit" value="添加图书">
+		</form>
+		
+		<a id="myA" href="/SpringMVC/test5/handle4">测试发送ajax请求</a><br>
+</body>
+</html>
